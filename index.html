@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payload CMS — The React & TypeScript Headless CMS</title>
+  <meta name="description" content="Payload is the open-source, code-first TypeScript and React headless CMS and application framework. Full Express control, instant GraphQL & REST APIs, and an extensible admin panel.">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Payload CMS — The React & TypeScript Headless CMS">
+  <meta property="og:description" content="Minimal, extensible, and deeply powerful. Full control over Express, automated APIs, and total freedom.">
+  <meta property="og:image" content="figma_preview.png">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <span class="badge-pill">Payload 2.0</span>
+      <p class="announcement-text">Payload is completely free & open source under the MIT license. Star us on GitHub!</p>
+      <a href="https://github.com/payloadcms/payload" target="_blank" rel="noopener noreferrer" class="announcement-link">
+        GitHub Repository
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Payload Home">
+        <svg class="logo-mark" width="30" height="30" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#ffffff"/>
+          <path d="M9 8h8a6 6 0 0 1 0 12h-8V8zm0 7h7.5a2.5 2.5 0 0 0 0-5H9v5z" fill="#000000"/>
+          <rect x="9" y="21" width="5" height="3" rx="1.5" fill="#25c2a0"/>
+        </svg>
+        <span class="logo-text">Payload</span>
+      </a>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#code-preview" class="nav-link">Code</a>
+        <a href="#fields" class="nav-link">Field Types</a>
+        <a href="#showcase" class="nav-link">Showcase</a>
+        <a href="#docs" class="nav-link">Documentation</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://github.com/payloadcms/payload" target="_blank" rel="noopener noreferrer" class="github-badge" title="Star on GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span class="gh-count">★ 24.8k</span>
+        </a>
+        <a href="#quickstart" class="btn btn-primary btn-sm">Get Started</a>
+
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow-bg"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-pill-badge">
+          <span class="pulse-dot"></span>
+          <span>Open Source Headless CMS</span>
+        </div>
+
+        <h1 class="hero-title">
+          The React &amp;<br>
+          <span class="gradient-text">TypeScript CMS</span>
+        </h1>
+
+        <p class="hero-description">
+          Payload is the code-first, developer-first headless CMS and application framework. 
+          Gives you total architectural control over your Express app with zero black-box magic, 
+          instant GraphQL &amp; REST APIs, and a customizable React admin interface.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#quickstart" class="btn btn-primary btn-lg">
+            Start Building Free
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <div class="cli-command-box" id="copyCliHero" role="button" tabindex="0" title="Click to copy command">
+            <span class="cli-prompt">$</span>
+            <code class="cli-code">npx create-payload-app@latest</code>
+            <button class="copy-icon-btn" aria-label="Copy to clipboard">
+              <svg class="icon-copy" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25c2a0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">TypeScript Native</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">&lt; 1ms</span>
+            <span class="metric-lbl">Local API Latency</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">MIT</span>
+            <span class="metric-lbl">Permissive License</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">Self-Hosted</span>
+            <span class="metric-lbl">Your Own Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Interactive Code Window -->
+      <div class="hero-editor-wrapper" id="code-preview">
+        <div class="code-editor-window">
+          <div class="editor-titlebar">
+            <div class="window-controls">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="editor-tabs" role="tablist">
+              <button class="tab-btn active" data-tab="tab-config" role="tab" aria-selected="true">payload.config.ts</button>
+              <button class="tab-btn" data-tab="tab-server" role="tab" aria-selected="false">server.ts</button>
+              <button class="tab-btn" data-tab="tab-query" role="tab" aria-selected="false">api.graphql</button>
+            </div>
+            <div class="editor-lang-tag">TypeScript</div>
+          </div>
+
+          <div class="editor-body">
+            <!-- Tab 1: payload.config.ts -->
+            <div class="tab-pane active" id="tab-config">
+              <pre><code><span class="c-comment">// Define collections cleanly in code with strict TypeScript</span>
+<span class="c-keyword">import</span> { <span class="c-type">buildConfig</span> } <span class="c-keyword">from</span> <span class="c-string">'payload/config'</span>;
+<span class="c-keyword">import</span> { <span class="c-type">PostCollection</span> } <span class="c-keyword">from</span> <span class="c-string">'./collections/Posts'</span>;
+
+<span class="c-keyword">export default</span> <span class="c-func">buildConfig</span>({
+  <span class="c-prop">serverURL</span>: <span class="c-string">'http://localhost:3000'</span>,
+  <span class="c-prop">admin</span>: {
+    <span class="c-prop">user</span>: <span class="c-string">'users'</span>,
+    <span class="c-prop">components</span>: {
+      <span class="c-prop">graphics</span>: { <span class="c-prop">Logo</span>: <span class="c-type">CustomBrandLogo</span> },
+    },
+  },
+  <span class="c-prop">collections</span>: [
+    {
+      <span class="c-prop">slug</span>: <span class="c-string">'posts'</span>,
+      <span class="c-prop">access</span>: {
+        <span class="c-func">read</span>: () =&gt; <span class="c-literal">true</span>, <span class="c-comment">// Public read access</span>
+      },
+      <span class="c-prop">fields</span>: [
+        { <span class="c-prop">name</span>: <span class="c-string">'title'</span>, <span class="c-prop">type</span>: <span class="c-string">'text'</span>, <span class="c-prop">required</span>: <span class="c-literal">true</span> },
+        { <span class="c-prop">name</span>: <span class="c-string">'author'</span>, <span class="c-prop">type</span>: <span class="c-string">'relationship'</span>, <span class="c-prop">relationTo</span>: <span class="c-string">'users'</span> },
+        { <span class="c-prop">name</span>: <span class="c-string">'content'</span>, <span class="c-prop">type</span>: <span class="c-string">'richText'</span> },
+        { <span class="c-prop">name</span>: <span class="c-string">'tags'</span>, <span class="c-prop">type</span>: <span class="c-string">'array'</span>, <span class="c-prop">fields</span>: [{ <span class="c-prop">name</span>: <span class="c-string">'tag'</span>, <span class="c-prop">type</span>: <span class="c-string">'text'</span> }] },
+      ],
+    },
+  ],
+  <span class="c-prop">typescript</span>: {
+    <span class="c-prop">outputFile</span>: <span class="c-string">'path/to/payload-types.ts'</span>,
+  },
+});</code></pre>
+            </div>
+
+            <!-- Tab 2: server.ts -->
+            <div class="tab-pane" id="tab-server">
+              <pre><code><span class="c-comment">// Mount Payload inside your standard Express application</span>
+<span class="c-keyword">import</span> <span class="c-type">express</span> <span class="c-keyword">from</span> <span class="c-string">'express'</span>;
+<span class="c-keyword">import</span> <span class="c-type">payload</span> <span class="c-keyword">from</span> <span class="c-string">'payload'</span>;
+
+<span class="c-keyword">const</span> <span class="c-prop">app</span> = <span class="c-func">express</span>();
+
+<span class="c-keyword">const</span> <span class="c-prop">start</span> = <span class="c-keyword">async</span> () =&gt; {
+  <span class="c-comment">// Initialize Payload with your configuration</span>
+  <span class="c-keyword">await</span> <span class="c-prop">payload</span>.<span class="c-func">init</span>({
+    <span class="c-prop">secret</span>: <span class="c-prop">process</span>.<span class="c-prop">env</span>.<span class="c-prop">PAYLOAD_SECRET</span>,
+    <span class="c-prop">express</span>: <span class="c-prop">app</span>,
+    <span class="c-func">onInit</span>: () =&gt; {
+      <span class="c-prop">payload</span>.<span class="c-prop">logger</span>.<span class="c-func">info</span>(<span class="c-string">'🚀 Payload CMS running at http://localhost:3000'</span>);
+    },
+  });
+
+  <span class="c-comment">// Add custom Express routes, authentication, or middleware freely</span>
+  <span class="c-prop">app</span>.<span class="c-func">get</span>(<span class="c-string">'/api/health'</span>, (<span class="c-prop">req</span>, <span class="c-prop">res</span>) =&gt; {
+    <span class="c-prop">res</span>.<span class="c-func">status</span>(<span class="c-number">200</span>).<span class="c-func">json</span>({ <span class="c-prop">status</span>: <span class="c-string">'online'</span>, <span class="c-prop">database</span>: <span class="c-string">'connected'</span> });
+  });
+
+  <span class="c-prop">app</span>.<span class="c-func">listen</span>(<span class="c-number">3000</span>);
+};
+
+<span class="c-func">start</span>();</code></pre>
+            </div>
+
+            <!-- Tab 3: api.graphql -->
+            <div class="tab-pane" id="tab-query">
+              <pre><code><span class="c-comment"># Native GraphQL automatically generated from your schema</span>
+<span class="c-keyword">query</span> <span class="c-func">FetchRecentPosts</span> {
+  <span class="c-prop">Posts</span>(
+    <span class="c-prop">limit</span>: <span class="c-number">5</span>
+    <span class="c-prop">sort</span>: <span class="c-string">"-createdAt"</span>
+    <span class="c-prop">where</span>: { <span class="c-prop">status</span>: { <span class="c-prop">equals</span>: <span class="c-string">"published"</span> } }
+  ) {
+    <span class="c-prop">docs</span> {
+      <span class="c-prop">id</span>
+      <span class="c-prop">title</span>
+      <span class="c-prop">slug</span>
+      <span class="c-prop">author</span> {
+        <span class="c-prop">name</span>
+        <span class="c-prop">email</span>
+      }
+      <span class="c-prop">createdAt</span>
+    }
+    <span class="c-prop">totalDocs</span>
+    <span class="c-prop">hasNextPage</span>
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="editor-footer">
+            <span class="status-indicator online"></span>
+            <span class="status-text">Ready &bull; Auto-compiled TypeScript types in real-time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Core Pillars Banner -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h2 class="pillar-title">Minimal</h2>
+          <p class="pillar-desc">
+            Unopinionated and lightweight. Payload does not enforce strict frontends or convoluted server wrappers. It is simply an npm package in your code.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10M12 7v10"/></svg>
+          </div>
+          <h2 class="pillar-title">Extensible</h2>
+          <p class="pillar-desc">
+            Customize virtually anything. Inject custom React components into any view or field, bind hooks at every lifecycle stage, and write standard Express middleware.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/></svg>
+          </div>
+          <h2 class="pillar-title">Open Source</h2>
+          <p class="pillar-desc">
+            Permissively licensed under MIT. Host on your own servers or any cloud provider with zero arbitrary API limits, vendor lock-in, or seat licensing fees.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 01: Architecture & Comparison -->
+  <section class="section-architecture" id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <div class="subheading-tag">// 01. ARCHITECTURE</div>
+        <h2 class="section-title">Payload is a headless CMS and application framework.</h2>
+        <p class="section-lead">
+          Unlike traditional monolithic CMS platforms or SaaS APIs, Payload gives you a full-stack engine 
+          that runs directly alongside your application code.
+        </p>
+      </div>
+
+      <div class="architecture-split">
+        <div class="arch-info-col">
+          <div class="arch-card">
+            <div class="arch-card-header">
+              <span class="badge-accent">Total Freedom</span>
+              <h3>Give you full control over your Express app</h3>
+            </div>
+            <p>
+              Payload doesn’t hide your server in an inaccessible cloud container. You initialize Payload directly within an Express instance, giving you the ability to attach your own routes, security layers, webhooks, and microservices in pure TypeScript.
+            </p>
+            <ul class="feature-checklist">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25c2a0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Zero black-box abstractions or locked backends</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25c2a0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Full access to Express <code>req</code> and <code>res</code> objects</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25c2a0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Use any Node.js package or npm library directly</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="arch-card">
+            <div class="arch-card-header">
+              <span class="badge-accent">Database Agnostic</span>
+              <h3>MongoDB, PostgreSQL, SQLite, or MySQL</h3>
+            </div>
+            <p>
+              Choose the database that fits your architecture. Seamlessly connect MongoDB or relational SQL engines without altering your collection field definitions.
+            </p>
+          </div>
+        </div>
+
+        <div class="arch-interactive-col">
+          <div class="interactive-sandbox">
+            <div class="sandbox-header">
+              <div class="sandbox-title">Interactive API Tester</div>
+              <div class="sandbox-actions">
+                <button class="api-btn active" data-endpoint="posts">GET /api/posts</button>
+                <button class="api-btn" data-endpoint="users">GET /api/users</button>
+                <button class="api-btn" data-endpoint="local">payload.find()</button>
+              </div>
+            </div>
+
+            <div class="sandbox-terminal">
+              <div class="terminal-bar">
+                <span class="terminal-url" id="activeApiUrl">https://api.yourdomain.com/api/posts?depth=2&amp;limit=2</span>
+                <span class="terminal-status" id="activeApiStatus">200 OK (14ms)</span>
+              </div>
+              <pre class="terminal-json" id="apiResponseViewer"><code>{
+  "docs": [
+    {
+      "id": "64ef819a2c",
+      "title": "Scaling Modern Content with Payload & Next.js",
+      "slug": "scaling-modern-content",
+      "author": {
+        "id": "usr_9918",
+        "name": "Alex Mercer",
+        "role": "Lead Architect"
+      },
+      "status": "published",
+      "publishedAt": "2026-10-24T10:30:00.000Z",
+      "tags": ["Architecture", "Headless", "TypeScript"]
+    },
+    {
+      "id": "64ef819b4f",
+      "title": "Why Code-First Schemas Beat Point-and-Click GUIs",
+      "slug": "code-first-schemas",
+      "author": {
+        "id": "usr_7712",
+        "name": "Elena Rostova",
+        "role": "Staff Engineer"
+      },
+      "status": "published",
+      "publishedAt": "2026-10-25T16:15:00.000Z",
+      "tags": ["Engineering", "DX"]
+    }
+  ],
+  "totalDocs": 24,
+  "limit": 2,
+  "totalPages": 12,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": true
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 02: Everything You Need In a CMS -->
+  <section class="section-features" id="features">
+    <div class="container">
+      <div class="section-header center">
+        <div class="subheading-tag">// 02. COMPREHENSIVE TOOLKIT</div>
+        <h2 class="section-title">Everything you need in a modern CMS.</h2>
+        <p class="section-lead">
+          Engineered to satisfy demanding production workloads without sacrificing developer delight.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3M4 17v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3M9 12h6M4 12h.01M20 12h.01"/></svg>
+          </div>
+          <h3 class="feature-title">GraphQL, REST &amp; Local API</h3>
+          <p class="feature-desc">
+            Payload automatically generates fully-typed GraphQL and REST endpoints based on your schema. Or use the Local API in your server without HTTP overhead.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 class="feature-title">Extensible Authentication</h3>
+          <p class="feature-desc">
+            Complete authentication out of the box with JWT, email verification, password resets, API keys, and custom granular access control functions.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="feature-title">End-to-End TypeScript</h3>
+          <p class="feature-desc">
+            Write your config in TypeScript and Payload automatically generates corresponding TypeScript interfaces. Never write duplicate types again.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 class="feature-title">Hooks &amp; Middleware</h3>
+          <p class="feature-desc">
+            Execute custom business logic at precise lifecycle moments: <code>beforeChange</code>, <code>afterChange</code>, <code>beforeRead</code>, <code>afterDelete</code>, and more.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3 class="feature-title">Built-in File Uploads</h3>
+          <p class="feature-desc">
+            Upload images, PDFs, and files directly. Automatic image resizing, crop focal points, MIME-type validation, and native S3/Cloud storage adapters.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-box">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3 class="feature-title">White-Label Admin UI</h3>
+          <p class="feature-desc">
+            Easily replace branding, inject custom React views, dashboard statistics widgets, and bespoke sidebar navigation to suit your client or team needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Field Types Showcase -->
+  <section class="section-fields" id="fields">
+    <div class="container">
+      <div class="section-header">
+        <div class="subheading-tag">// 03. SCHEMA COMPOSITION</div>
+        <h2 class="section-title">A complete, modern suite of field types.</h2>
+        <p class="section-lead">
+          Structure content exactly how you want. Define complex nested schemas with blocks, relationships, and rich text editors.
+        </p>
+      </div>
+
+      <div class="fields-showcase-container">
+        <div class="fields-nav-pills" id="fieldNavPills">
+          <button class="field-pill active" data-field="blocks">Blocks Field</button>
+          <button class="field-pill" data-field="relationship">Relationship</button>
+          <button class="field-pill" data-field="richtext">Rich Text</button>
+          <button class="field-pill" data-field="upload">Upload &amp; Media</button>
+          <button class="field-pill" data-field="array">Array &amp; Group</button>
+        </div>
+
+        <div class="field-display-card">
+          <div class="field-code-col">
+            <div class="field-col-header">
+              <span class="file-tag">field.config.ts</span>
+              <span class="type-badge">TypeScript Definition</span>
+            </div>
+            <pre class="field-code-pre" id="fieldCodeSnippet"><code>{
+  name: 'layout',
+  type: 'blocks',
+  required: true,
+  blocks: [
+    HeroBlock,
+    CallToActionBlock,
+    ContentSliderBlock,
+    MediaGridBlock,
+  ],
+}</code></pre>
+          </div>
+
+          <div class="field-preview-col">
+            <div class="field-col-header">
+              <span class="file-tag">Admin UI Experience</span>
+              <span class="preview-badge">React Admin</span>
+            </div>
+            <div class="admin-mock-card" id="fieldAdminMock">
+              <div class="mock-field-group">
+                <label class="mock-label">Layout Blocks <span class="required">*</span></label>
+                <div class="mock-blocks-container">
+                  <div class="mock-block-item">
+                    <span class="mock-block-tag">01. Hero Section</span>
+                    <span class="mock-block-status">Configured</span>
+                  </div>
+                  <div class="mock-block-item">
+                    <span class="mock-block-tag">02. Media Gallery</span>
+                    <span class="mock-block-status">4 Items</span>
+                  </div>
+                  <button class="mock-add-block-btn">+ Add Block</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04: Real World Showcase -->
+  <section class="section-showcase" id="showcase">
+    <div class="container">
+      <div class="section-header center">
+        <div class="subheading-tag">// 04. PRODUCTION SITES</div>
+        <h2 class="section-title">Websites made with Payload.</h2>
+        <p class="section-lead">
+          Powering modern digital products, enterprise platforms, and editorial publications across the world.
+        </p>
+      </div>
+
+      <div class="showcase-filter-bar">
+        <button class="showcase-filter-btn active" data-filter="all">All Projects</button>
+        <button class="showcase-filter-btn" data-filter="saas">SaaS &amp; Tech</button>
+        <button class="showcase-filter-btn" data-filter="ecommerce">E-Commerce</button>
+        <button class="showcase-filter-btn" data-filter="editorial">Editorial</button>
+      </div>
+
+      <div class="showcase-grid">
+        <!-- Project 1 -->
+        <div class="showcase-card" data-category="saas">
+          <div class="showcase-preview preview-gradient-1">
+            <div class="showcase-screen-mock">
+              <div class="screen-header">
+                <span class="screen-dot"></span>
+                <span class="screen-dot"></span>
+                <span class="screen-dot"></span>
+              </div>
+              <div class="screen-body">
+                <div class="skeleton-line wide"></div>
+                <div class="skeleton-line med"></div>
+                <div class="skeleton-grid">
+                  <div class="skeleton-box"></div>
+                  <div class="skeleton-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-details">
+            <div class="showcase-tags">
+              <span class="tag">SaaS</span>
+              <span class="tag">Next.js 14</span>
+              <span class="tag">Postgres</span>
+            </div>
+            <h3 class="showcase-name">HyperScale Cloud Platform</h3>
+            <p class="showcase-text">Enterprise infrastructure monitoring with live telemetry dashboards, role-based tenant spaces, and multi-region content localization.</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="showcase-card" data-category="ecommerce">
+          <div class="showcase-preview preview-gradient-2">
+            <div class="showcase-screen-mock">
+              <div class="screen-header">
+                <span class="screen-dot"></span>
+                <span class="screen-dot"></span>
+                <span class="screen-dot"></span>
+              </div>
+              <div class="screen-body">
+                <div class="skeleton-hero"></div>
+                <div class="skeleton-grid">
+                  <div class="skeleton-box"></div>
+                  <div class="skeleton-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-details">
+            <div class="showcase-tags">
+              <span class="tag">E-Commerce</span>
+              <span class="tag">Stripe</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <h3 class="showcase-name">Nordic Atelier Living</h3>
+            <p class="showcase-text">Direct-to-consumer designer furniture store with real-time inventory management, variant matrix, and custom checkout flows.</p>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="showcase-card" data-category="editorial">
+          <div class="showcase-preview preview-gradient-3">
+            <div class="showcase-screen-mock">
+              <div class="screen-header">
+                <span class="screen-dot"></span>
+                <span class="screen-dot"></span>
+                <span class="screen-dot"></span>
+              </div>
+              <div class="screen-body">
+                <div class="skeleton-line wide"></div>
+                <div class="skeleton-line med"></div>
+                <div class="skeleton-article"></div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-details">
+            <div class="showcase-tags">
+              <span class="tag">Editorial</span>
+              <span class="tag">Lexical Editor</span>
+              <span class="tag">GraphQL</span>
+            </div>
+            <h3 class="showcase-name">The Chronicle Tech Digest</h3>
+            <p class="showcase-text">High-traffic digital publication publishing hundreds of daily articles with dynamic author credits, rich media embeds, and newsletter integration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 05: Call to Action / Quickstart -->
+  <section class="section-cta" id="quickstart">
+    <div class="container">
+      <div class="cta-inner-card">
+        <div class="cta-decor-circle"></div>
+        <span class="badge-pill mb-2">Get Started in 60 Seconds</span>
+        <h2 class="cta-title">Ready to build without compromise?</h2>
+        <p class="cta-subtitle">
+          Create a production-ready Payload application with a single terminal command. 
+          Choose your database, pick a template, and deploy anywhere.
+        </p>
+
+        <div class="cta-command-row">
+          <div class="cli-command-box cli-command-lg" id="copyCliCta" role="button" tabindex="0">
+            <span class="cli-prompt">$</span>
+            <code class="cli-code">npx create-payload-app@latest</code>
+            <button class="copy-icon-btn" aria-label="Copy install command">
+              <svg class="icon-copy" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="icon-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25c2a0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="cta-actions">
+          <a href="https://github.com/payloadcms/payload" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            Star on GitHub
+          </a>
+          <a href="#code-preview" class="btn btn-secondary">Explore Documentation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="docs">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="#hero" class="brand-logo footer-logo">
+            <svg class="logo-mark" width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="#ffffff"/>
+              <path d="M9 8h8a6 6 0 0 1 0 12h-8V8zm0 7h7.5a2.5 2.5 0 0 0 0-5H9v5z" fill="#000000"/>
+              <rect x="9" y="21" width="5" height="3" rx="1.5" fill="#25c2a0"/>
+            </svg>
+            <span class="logo-text">Payload</span>
+          </a>
+          <p class="footer-description">
+            The developer-first, code-driven headless CMS for TypeScript and React. Full Express flexibility with automated APIs.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://github.com/payloadcms/payload" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Product</h4>
+          <ul class="footer-list">
+            <li><a href="#features">GraphQL &amp; REST</a></li>
+            <li><a href="#architecture">Express Integration</a></li>
+            <li><a href="#fields">Field Types</a></li>
+            <li><a href="#code-preview">TypeScript Engine</a></li>
+            <li><a href="#showcase">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Developers</h4>
+          <ul class="footer-list">
+            <li><a href="#quickstart">Quickstart Guide</a></li>
+            <li><a href="#code-preview">payload.config.ts</a></li>
+            <li><a href="#architecture">Database Connectors</a></li>
+            <li><a href="#fields">Custom Admin Views</a></li>
+            <li><a href="https://github.com/payloadcms/payload" target="_blank" rel="noopener noreferrer">GitHub Releases</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Community</h4>
+          <ul class="footer-list">
+            <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord Server</a></li>
+            <li><a href="https://github.com/payloadcms/payload/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
+            <li><a href="#showcase">Community Showcase</a></li>
+            <li><a href="https://github.com/payloadcms/payload/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Contributing</a></li>
+            <li><a href="#hero">Roadmap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Payload CMS, Inc. Open-source under the MIT license.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="sep">&bull;</span>
+          <a href="#hero">Back to top &uarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toastNotification" role="alert" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25c2a0" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    <span class="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
